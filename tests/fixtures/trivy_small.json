@@ -1,0 +1,54 @@
+{
+  "SchemaVersion": 2,
+  "ArtifactName": "test-repo",
+  "ArtifactType": "filesystem",
+  "Results": [
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2021-23362",
+          "PkgName": "hosted-git-info",
+          "InstalledVersion": "2.8.8",
+          "FixedVersion": "2.8.9",
+          "Severity": "MEDIUM",
+          "Title": "ReDoS in hosted-git-info",
+          "Description": "Regular expression denial of service."
+        },
+        {
+          "VulnerabilityID": "CVE-2021-44906",
+          "PkgName": "minimist",
+          "InstalledVersion": "0.0.8",
+          "FixedVersion": "1.2.6",
+          "Severity": "CRITICAL",
+          "Title": "Prototype Pollution in minimist",
+          "Description": "Minimist <=1.2.5 is vulnerable to Prototype Pollution."
+        }
+      ]
+    },
+    {
+      "Target": "Gemfile.lock",
+      "Class": "lang-pkgs",
+      "Type": "bundler",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2022-23837",
+          "PkgName": "sidekiq",
+          "InstalledVersion": "5.2.9",
+          "FixedVersion": "5.2.10",
+          "Severity": "HIGH",
+          "Title": "Denial of Service in sidekiq",
+          "Description": "In Sidekiq before 5.2.10 there is a denial of service."
+        }
+      ]
+    }
+  ],
+  "Dependencies": [
+    {
+      "ID": "package-lock.json",
+      "DependsOn": ["Gemfile.lock"]
+    }
+  ]
+}

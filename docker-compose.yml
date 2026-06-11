@@ -1,0 +1,9 @@
+services:
+  code-guardian:
+    build: .
+    volumes:
+      - ./results:/workspace/results
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
+    # Override command at runtime, e.g.:
+    # docker compose run code-guardian https://github.com/OWASP/NodeGoat --fail-on CRITICAL
